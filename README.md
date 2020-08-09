@@ -18,37 +18,37 @@ Assumptions for family:
 
 Assumptions for above methods:
 - For GET_RELATIONSHIP
-  @ Method for relation should exist
-  @ Person should exist as spouse or born in family
-  @ Valid inputs as relation is 'Daughter','Son','Father','Mother','Brother', 'Sister' , 'Father-In-Law','Mother-In-Law','Brother-In-Law', 'Sister-In-Law' , 
+  * Method for relation should exist
+  * Person should exist as spouse or born in family
+  * Valid inputs as relation is 'Daughter','Son','Father','Mother','Brother', 'Sister' , 'Father-In-Law','Mother-In-Law','Brother-In-Law', 'Sister-In-Law' , 
   'Maternal-Aunt', 'Maternal-Uncle','Paternal-Aunt','Paternal-Uncle','Siblings'
   
 - For ADD_CHILD
-	@ Mother should exist in family then only Child gets added
-	@ Mother should be married then only child gets added
-	@ Mother should be female then only child gets added
-	@ Child's Name cannot exist for any family member already 
+  * Mother should exist in family then only Child gets added
+  * Mother should be married then only child gets added
+  * Mother should be female then only child gets added
+  * Child's Name cannot exist for any family member already 
 	
 - For ADD_SPOUSE, 
-	@ Person should exist not as spouse but as original member born in family
-	@ Spouse Name cannot exist for any family member already
-	@ Person should not be already married
+  * Person should exist not as spouse but as original member born in family
+  * Spouse Name cannot exist for any family member already
+  * Person should not be already married
 
 Error case response:
 - GET_RELATIONSHIP
-  @ returns RELATION_NOT_VALID if method for relation does not exist.
-  @ returns NAME_NOT_VALID if blanks or spaces is given as Person
+  * returns RELATION_NOT_VALID if method for relation does not exist.
+  * returns NAME_NOT_VALID if blanks or spaces is given as Person
   
 - ADD_CHILD
-  @ If Gender Invalid, returns CHILD_ADDITION_FAILED_GENDER_NOT_VALID
-  @ If Mother is not female, returns CHILD_ADDITION_FAILED_MOTHER_NOT_FEMALE
-  @ If Mother is not married, returns CHILD_ADDITION_FAILED_MOTHER_NOT_MARRIED
-  @ If Childname is blank or spaces, returns CHILD_ADDITION_FAILED_CHILDNAME_NOT_VALID
-  @ If Mother is not found in familt, returns CHILD_ADDITION_FAILED_MOTHER_NOT_FOUND
-  @ If Childname exists in family, returns CHILD_ADDITION_FAILED_CHILDNAME_EXISTS_IN_FAMILY
+  * If Gender Invalid, returns CHILD_ADDITION_FAILED_GENDER_NOT_VALID
+  * If Mother is not female, returns CHILD_ADDITION_FAILED_MOTHER_NOT_FEMALE
+  * If Mother is not married, returns CHILD_ADDITION_FAILED_MOTHER_NOT_MARRIED
+  * If Childname is blank or spaces, returns CHILD_ADDITION_FAILED_CHILDNAME_NOT_VALID
+  * If Mother is not found in familt, returns CHILD_ADDITION_FAILED_MOTHER_NOT_FOUND
+  * If Childname exists in family, returns CHILD_ADDITION_FAILED_CHILDNAME_EXISTS_IN_FAMILY
   
 - ADD_SPOUSE
-  @ returns SPOUSE_ADDITION_FAILED_PERSON_ALREADY_MARRIED, if Person is already married
-  @ returns SPOUSE_ADDITION_FAILED_PERSON_NOT_IN_FAMILY, if Person is not born in family
-  @ returns SPOUSE_ADDITION_FAILED_PERSONNAME_NOT_VALID, if Person Name is blank or spaces
-  @ returns SPOUSE_ADDITION_FALIED_SPOUSENAME_NOT_VALID, if Spouse Name is blank or spaces or is in family
+  * returns SPOUSE_ADDITION_FAILED_PERSON_ALREADY_MARRIED, if Person is already married
+  * returns SPOUSE_ADDITION_FAILED_PERSON_NOT_IN_FAMILY, if Person is not born in family
+  * returns SPOUSE_ADDITION_FAILED_PERSONNAME_NOT_VALID, if Person Name is blank or spaces
+  * returns SPOUSE_ADDITION_FALIED_SPOUSENAME_NOT_VALID, if Spouse Name is blank or spaces or is in family
